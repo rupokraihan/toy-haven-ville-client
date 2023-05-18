@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import logo from '../../assets/logo/H__1_-removebg-preview.png'
-import { AuthContext } from '../../providers/AuthProviders';
+import logo from "../../assets/logo/H__1_-removebg-preview.png";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,18 +101,26 @@ const Navbar = () => {
                     >
                       Sign out
                     </NavLink>
-                      {/* User profile picture */}
-                      <div className="w-11 h-11 rounded-full ring">
-                        <img
-                          className="rounded-full w-11 h-11 hover:opacity-75"
-                          src={user.photoURL}
-                          alt=""
-                        />
-                        {/* User's name on hover */}
-                        
+                    {/* User profile picture */}
+                    <div className="w-11 h-11 rounded-full ring relative">
+                      <img
+                        className="rounded-full w-11 h-11 hover:opacity-75"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                      {/* User's name on hover */}
+                      <div className="absolute w-32 -top-2 left-28 transform -translate-x-1/2 bg-gray-600 text-white px-2 py-2 rounded-md shadow opacity-0 transition-opacity duration-300">
+                        {user.displayName}
                       </div>
-                    
+                    </div>
                   </div>
+                  <style>
+                    {`
+        .w-11:hover .absolute {
+          opacity: 1;
+        }
+      `}
+                  </style>
                 </>
               ) : (
                 <NavLink
@@ -197,4 +205,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
