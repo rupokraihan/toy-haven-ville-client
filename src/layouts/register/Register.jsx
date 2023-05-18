@@ -1,17 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Register = () => {
-    const handleRegister = (event) => {
-      event.preventDefault();
+  const { user, createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
-      const form = event.target;
-      const name = form.username.value;
-      const email = form.email.value;
-      const password = form.password.value;
-      const photo = form.userphoto.value;
-      console.log(name,email,password,photo)
-    };
+  console.log(createUser);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.username.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.userphoto.value;
+    console.log(name, email, password, photo);
+
+    if (password.length < 6) {
+      setError("Password must be 6 characters or longer");
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+
+        userInfo(loggedUser, name, photo)
+          .then((result) => {})
+          .catch((error) => console.log(error.message));
+
+        setUser(loggedUser);
+        form.reset();
+      })
+      .catch((error) => console.log(error.message));
+  };
   return (
     <div>
       <div className="hero bg-white">
@@ -84,7 +107,7 @@ const Register = () => {
               </div>
             </form>
 
-            <p className="text-red-700 text-center mb-4">hi</p>
+            <p className="text-red-700 text-center mb-4">{error}</p>
           </div>
         </div>
       </div>
