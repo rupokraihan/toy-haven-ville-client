@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
-  const { signIn, setUser } = useContext(AuthContext);
+  const { signIn, setUser, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -15,7 +15,6 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
@@ -27,6 +26,18 @@ const Login = () => {
         setError(error.message);
       });
   };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  }
+
+
   return (
     <div>
       <div className="hero bg-white">
@@ -81,7 +92,10 @@ const Login = () => {
               </div>
               <div className="form-control mt-4">
                 <p className="text-lg text-center mb-4">or</p>
-                <button className="btn bg-[#9ccd64] text-gray-950 font-semibold border-0 hover:bg-gray-400">
+                <button
+                  onClick={handleGoogleLogin}
+                  className="btn bg-[#9ccd64] text-gray-950 font-semibold border-0 hover:bg-gray-400"
+                >
                   Sign in with google
                 </button>
               </div>

@@ -51,7 +51,7 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            {/* Conditional rendering for My Toys */}
+            {/* Conditional rendering*/}
             {user && (
               <li>
                 <NavLink
@@ -65,7 +65,6 @@ const Navbar = () => {
               </li>
             )}
 
-            {/* Conditional rendering for Add A Toy */}
             {user && (
               <li>
                 <NavLink
@@ -102,7 +101,6 @@ const Navbar = () => {
                     >
                       Sign out
                     </NavLink>
-                    <div className="relative">
                       {/* User profile picture */}
                       <div className="w-11 h-11 rounded-full ring">
                         <img
@@ -111,19 +109,10 @@ const Navbar = () => {
                           alt=""
                         />
                         {/* User's name on hover */}
-                        <div className="absolute -top-5 left-24 transform -translate-x-1/2 bg-blue-300 px-2 py-2 rounded-md shadow opacity-0 transition-opacity duration-300">
-                          {user.displayName}
-                        </div>
+                        
                       </div>
-                    </div>
+                    
                   </div>
-                  <style>
-                    {`
-                      .w-11:hover .absolute {
-                        opacity: 1;
-                      }
-                    `}
-                  </style>
                 </>
               ) : (
                 <NavLink
