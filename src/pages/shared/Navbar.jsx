@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { XMarkIcon, Bars3BottomRightIcon, } from "@heroicons/react/24/solid";
+import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import logo from '../../assets/logo/H__1_-removebg-preview.png'
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>
-      <div className="web-color text-lg px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
-        <div className="relative flex items-center justify-between ">
-          <div className="flex  items-center gap-4">
+      <div className="web-color text-lg px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="relative flex items-center justify-between">
+          <div className="flex items-center gap-4">
             {/* logo */}
             <div>
               <img className="h-[80px] w-[130px]" src={logo} alt="" />
             </div>
 
             <div>
-              <Link to="/" className="inline-flex items-center ">
+              <Link to="/" className="inline-flex items-center">
                 <span className="ml-2 text-4xl font-bold tracking-wide">
                   toyHaven Ville
                 </span>
@@ -25,7 +33,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <ul className="items-center hidden space-x-8  lg:flex">
+          <ul className="items-center hidden space-x-8 lg:flex">
             <li>
               <NavLink
                 to="/"
@@ -43,23 +51,33 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                My Toys
-              </NavLink>
-            </li>
+            {/* Conditional rendering for My Toys */}
+            {user && (
+              <li>
+                <NavLink
+                  to="/my-toys"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  My Toys
+                </NavLink>
+              </li>
+            )}
 
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Add A Toy
-              </NavLink>
-            </li>
+            {/* Conditional rendering for Add A Toy */}
+            {user && (
+              <li>
+                <NavLink
+                  to="/add-toy"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Add A Toy
+                </NavLink>
+              </li>
+            )}
 
             <li>
               <NavLink
@@ -71,12 +89,52 @@ const Navbar = () => {
             </li>
 
             <li>
-              <NavLink
-                to="/login"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Login
-              </NavLink>
+              {/* Conditional rendering for user profile and login/logout */}
+              {user ? (
+                <>
+                  <div className="flex gap-6 items-center space-x-2">
+                    {/* Sign Out button */}
+                    <NavLink
+                      onClick={handleLogout}
+                      className={({ isActive }) =>
+                        isActive ? "default" : "active"
+                      }
+                    >
+                      Sign out
+                    </NavLink>
+                    <div className="relative">
+                      {/* User profile picture */}
+                      <div className="w-11 h-11 rounded-full ring">
+                        <img
+                          className="rounded-full w-11 h-11 hover:opacity-75"
+                          src={user.photoURL}
+                          alt=""
+                        />
+                        {/* User's name on hover */}
+                        <div className="absolute -top-5 left-24 transform -translate-x-1/2 bg-blue-300 px-2 py-2 rounded-md shadow opacity-0 transition-opacity duration-300">
+                          {user.displayName}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <style>
+                    {`
+                      .w-11:hover .absolute {
+                        opacity: 1;
+                      }
+                    `}
+                  </style>
+                </>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Login
+                </NavLink>
+              )}
             </li>
           </ul>
 
@@ -150,3 +208,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
