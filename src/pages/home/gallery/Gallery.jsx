@@ -37,8 +37,8 @@ const Gallery = () => {
             sports cars, trucks, regular cars, mini fire trucks, mini police
             cars, and more.
           </p>
-          <Tabs className="text-center">
-            <TabList className="">
+          <Tabs className="text-center  shadow-2xl shadow-gray-500 px-8 py-4">
+            <TabList className="font-bold text-xl">
               <Tab>Popular</Tab>
               <Tab>New Collection</Tab>
               <Tab>Most Sell</Tab>

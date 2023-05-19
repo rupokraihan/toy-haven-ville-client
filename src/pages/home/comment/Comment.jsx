@@ -3,7 +3,7 @@ import React from 'react';
 const Comment = () => {
   return (
     <div>
-      <section className="my-container">
+      <section className="my-container ">
         <div className="text-center">
           <h1 className="text-4xl tracking-wide font-bold mb-6">
             Share Your Thoughts on Toy Cars
@@ -13,7 +13,7 @@ const Comment = () => {
             gather <br /> to share their thoughts, experiences, and excitement.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto bg-[#0D223A] rounded-lg p-20">
+        <div className="max-w-4xl mx-auto bg-[#0D223A] shadow-lg rounded-lg p-20">
           <h1 className="text-2xl text-white mb-4">Add a Comment</h1>
           <div className="flex gap-8 mb-4">
             <input
