@@ -12,11 +12,11 @@
 }
 
 .active{
-  @apply font-bold tracking-wide text-blue-700 transition-colors duration-200 hover:text-white
+  @apply font-bold tracking-wide text-blue-700 transition-colors duration-200 hover:text-blue-500
 }
 
 .default{
-  @apply font-semibold tracking-wide  transition-colors duration-200 hover:text-white
+  @apply font-semibold tracking-wide  transition-colors duration-200 hover:text-blue-500
 }
 
 .web-color{

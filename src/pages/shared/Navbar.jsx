@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { XMarkIcon, Bars3BottomRightIcon } from "@heroicons/react/24/solid";
-import logo from "../../assets/logo/H__1_-removebg-preview.png";
+import logo from "../../assets/logo/H-removebg-preview.png";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="web-color text-lg px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
+      <div className="text-lg px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center gap-4">
             {/* logo */}
