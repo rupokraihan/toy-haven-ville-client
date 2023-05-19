@@ -18,26 +18,26 @@ const Comment = () => {
           <div className="flex gap-8 mb-4">
             <input
               type="text"
-              class="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
+              className="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
               placeholder="First Name"
             />
             <input
               type="text"
-              class="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
+              className="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
               placeholder="First Name"
             />
           </div>
           <div className="mb-4">
             <input
               type="email"
-              class="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054]  focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
+              className="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054]  focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
               placeholder="First Name"
               required
             />
           </div>
           <div className="mb-4">
             <textarea
-              class="w-full bg-[#314054] text-white h-56 px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
+              className="w-full bg-[#314054] text-white h-56 px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
               placeholder="Enter your comments"
               rows="4"
             ></textarea>

@@ -31,13 +31,13 @@ const Gallery = () => {
           <h2 className="text-4xl tracking-widest font-bold text-center mb-6">
             toyHaven's Gallery!
           </h2>
-          <p className="tracking-widest font-medium text-center mb-6">
+          <p className="tracking-widest font-medium text-center mb-10">
             Step into our captivating toy car gallery and immerse yourself in a
             world of miniature marvels. <br /> Discover a stunning collection of
             sports cars, trucks, regular cars, mini fire trucks, mini police
             cars, and more.
           </p>
-          <Tabs className="text-center  shadow-2xl shadow-gray-500 px-8 py-4">
+          <Tabs className="text-center  shadow-2xl shadow-gray-500 rounded-xl px-8 py-4">
             <TabList className="font-bold text-xl">
               <Tab>Popular</Tab>
               <Tab>New Collection</Tab>
@@ -87,8 +87,8 @@ const Gallery = () => {
                 <img className="w-72 h-44 rounded-md" src={img3} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img4} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img20} alt="" />
-                <img className="w-72 h-44 rounded-md" src={img1} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img9} alt="" />
+                <img className="w-72 h-44 rounded-md" src={img1} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img10} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img11} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img12} alt="" />
