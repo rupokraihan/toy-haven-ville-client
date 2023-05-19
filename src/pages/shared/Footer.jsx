@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="text-base font-semibold">
+            <p className="text-base font-semibold tracking-widest">
               toyHaven Ville Ltd.
               <br />
               Providing reliable tech since 2004
@@ -51,7 +51,7 @@ const Footer = () => {
           <a className="link link-hover">Github</a>
         </div>
       </footer>
-      <div className="py-6 text-sm text-center text-white">
+      <div className="py-6 text-sm text-center text-white tracking-widest">
         © 2023 toyHaven Ville Inc. All rights reserved.
       </div>
     </div>
