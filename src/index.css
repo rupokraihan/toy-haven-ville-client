@@ -18,7 +18,3 @@
 .default{
   @apply font-semibold tracking-wide  transition-colors duration-200 hover:text-blue-500
 }
-
-.web-color{
-  @apply bg-[#9ccd64]
-}

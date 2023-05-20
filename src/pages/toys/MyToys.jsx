@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -20,21 +21,30 @@ const MyToys = () => {
   }, []);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure?");
-    if (proceed) {
-      fetch(`http://localhost:5000/mytoys/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("Deleted successfully");
-            setToys(toys.filter((toy) => toy._id !== id));
-          }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/mytoys/${id}`, {
+          method: "DELETE",
         })
-        .catch((error) => console.error(error));
-    }
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              setToys(toys.filter((toy) => toy._id !== id));
+            }
+          })
+          .catch((error) => console.error(error));
+      }
+    });
   };
 
   return (
@@ -54,7 +64,6 @@ const MyToys = () => {
                   <th>Price</th>
                   <th className="text-center">Available Quantity</th>
                   <th>Update/Delete</th>
-                  <th>hi</th>
                 </tr>
               </thead>
               <tbody>
@@ -81,7 +90,6 @@ const MyToys = () => {
                         Delete
                       </button>
                     </td>
-                    
                   </tr>
                 ))}
               </tbody>

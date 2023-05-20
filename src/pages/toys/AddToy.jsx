@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -28,6 +29,7 @@ const AddToy = () => {
       detail_description,
       image,
     };
+    console.log(toyData);
     fetch("http://localhost:5000/addtoy", {
       method: "POST",
       headers: {
@@ -42,9 +44,13 @@ const AddToy = () => {
   };
 
   const handleAdd = () => {
-    toast("Added toy Successfully", {
-      position: toast.POSITION.TOP_CENTER,
-    });
+     Swal.fire({
+       position: "top-center",
+       icon: "success",
+       title: "Update your data",
+       showConfirmButton: false,
+       timer: 2000,
+     });
   }
 
   

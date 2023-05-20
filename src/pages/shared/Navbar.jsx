@@ -27,7 +27,7 @@ const Navbar = () => {
 
               <div>
                 <Link to="/" className="inline-flex items-center">
-                  <span className="ml-2 text-4xl font-bold tracking-wide">
+                  <span className="ml-2 text-blue-600 font-sans text-4xl font-bold tracking-wide">
                     toyHaven Ville
                   </span>
                 </Link>

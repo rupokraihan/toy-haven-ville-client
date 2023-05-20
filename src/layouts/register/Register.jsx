@@ -38,7 +38,7 @@ const Register = () => {
           <div className="text-center">
             <h1 className="text-4xl font-semibold mt-20 mb-8">
               Register
-              <span className="text-[#54930b] font-bold ml-4">
+              <span className="text-blue-600 font-serif font-extrabold ml-4 tracking-widest">
                 toyHaven Ville
               </span>
             </h1>
@@ -97,7 +97,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-4">
-                <button className="btn bg-[#9ccd64] text-gray-950 font-semibold border-0 hover:bg-gray-400">
+                <button className="btn bg-blue-600 text-white font-semibold tracking-widest border-0 hover:bg-gray-600">
                   Register
                 </button>
               </div>
