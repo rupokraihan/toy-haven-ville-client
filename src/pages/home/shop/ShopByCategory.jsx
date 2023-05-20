@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -58,9 +59,12 @@ const ShopByCategory = () => {
                             <p>Price: {data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
-                          <div className="card-actions justify-start mt-8">
+                          <Link
+                            to={"/details"}
+                            className="card-actions justify-start mt-8"
+                          >
                             <button className="my-btn">View Details</button>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -90,9 +94,12 @@ const ShopByCategory = () => {
                             <p>Price: {data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
-                          <div className="card-actions justify-start mt-8">
+                          <Link
+                            to={"/details"}
+                            className="card-actions justify-start mt-8"
+                          >
                             <button className="my-btn">View Details</button>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -121,9 +128,12 @@ const ShopByCategory = () => {
                             <p>Price: {data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
-                          <div className="card-actions justify-start mt-8">
+                          <Link
+                            to={"/details"}
+                            className="card-actions justify-start mt-8"
+                          >
                             <button className="my-btn">View Details</button>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>

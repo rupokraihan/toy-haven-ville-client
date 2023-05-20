@@ -1,11 +1,18 @@
 import React from "react";
+import loading from "../../src/assets/loading/loading.gif"
 
 const LoadingSpinner = () => {
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-68px)]">
-      <p className="text-7xl font-thin">L</p>
-      <div className="w-10 h-10 border-8 border-dashed rounded-full animate-spin mt-5 border-blue-400"></div>
-      <p className="text-7xl font-thin">ading....</p>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <div className="flex items-center mb-4">
+        <div className="mr-4">
+          <img className="w-28 h-28" src={loading} alt="" />
+        </div>
+        <h1 className="text-8xl font-thin text-blue-500">
+          Loading
+        </h1>
+      </div>
+      
     </div>
   );
 };
