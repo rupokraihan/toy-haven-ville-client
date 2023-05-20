@@ -46,7 +46,11 @@ const Gallery = () => {
               <hr className="border-2 bg-gray-700" />
             </TabList>
             <TabPanel className="mt-10">
-              <div className="grid  gap-4 grid-cols-2 lg:grid-cols-5">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                className="grid  gap-4 grid-cols-2 lg:grid-cols-5"
+              >
                 <img className="w-72 h-44 rounded-md" src={img1} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img18} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img6} alt="" />
@@ -65,7 +69,11 @@ const Gallery = () => {
               </div>
             </TabPanel>
             <TabPanel className="mt-10">
-              <div className="grid  gap-4 grid-cols-2 lg:grid-cols-5">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                className="grid  gap-4 grid-cols-2 lg:grid-cols-5"
+              >
                 <img className="w-72 h-44 rounded-md" src={img19} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img10} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img13} alt="" />
@@ -84,7 +92,11 @@ const Gallery = () => {
               </div>
             </TabPanel>
             <TabPanel className="mt-10">
-              <div className="grid  gap-4 grid-cols-2 lg:grid-cols-5">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                className="grid  gap-4 grid-cols-2 lg:grid-cols-5"
+              >
                 <img className="w-72 h-44 rounded-md" src={img3} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img4} alt="" />
                 <img className="w-72 h-44 rounded-md" src={img20} alt="" />

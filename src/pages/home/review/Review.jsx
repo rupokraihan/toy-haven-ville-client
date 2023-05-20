@@ -25,7 +25,7 @@ const Review = () => {
                   <img src={client1} alt="" />
                 </div>
 
-                <div>
+                <div >
                   <h2 className="card-title">Takuya Nakamura</h2>
                   <p className="mt-2 text-gray-500 text-medium">
                     789 Hikari Street, Kyoto, Japan
