@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../../assets/banner/tbzz-polybags-shell-2.jpg";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -20,7 +21,9 @@ const Banner = () => {
             collection. Get ready fun in the ultimate toy car wonderland -
             toyHaven!
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to={"/alltoys"}>
+            <button className="my-btn">All Toys</button>
+          </Link>
         </div>
       </div>
     </div>

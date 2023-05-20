@@ -22,6 +22,7 @@ import img18 from '../../../assets/toy-car/img-18.jpg'
 import img19 from '../../../assets/toy-car/img-19.jpg'
 import img20 from '../../../assets/toy-car/img-20.jpg'
 import img21 from '../../../assets/toy-car/img-21.jpg'
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
   return (
@@ -105,9 +106,9 @@ const Gallery = () => {
           <p className="tracking-widest font-medium text-center mb-6 mt-10">
             Visit our shop and wonderful journey into the realm of toy cars.
           </p>
-          <div className="text-center">
+          <Link to={"/alltoys"} className="flex justify-center">
             <button className="my-btn ">All toys</button>
-          </div>
+          </Link>
         </div>
       </section>
     </div>

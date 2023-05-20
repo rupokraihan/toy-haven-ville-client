@@ -60,7 +60,7 @@ const Navbar = () => {
               {user && (
                 <li>
                   <NavLink
-                    to="/my-toys"
+                    to="/mytoys"
                     className={({ isActive }) =>
                       isActive ? "active" : "default"
                     }
@@ -73,7 +73,7 @@ const Navbar = () => {
               {user && (
                 <li>
                   <NavLink
-                    to="/add-toy"
+                    to="/addtoy"
                     className={({ isActive }) =>
                       isActive ? "active" : "default"
                     }

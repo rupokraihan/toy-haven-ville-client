@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const ShopByCategory = () => {
   const [allData, setAllData] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -13,6 +16,14 @@ const ShopByCategory = () => {
       .then((data) => setAllData(data))
       .catch((error) => console.error(error));
   }, []);
+
+  const handleViewDetails = () => {
+    if (!user) {
+      toast("You have to log in first to view details", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
+  };
 
   return (
     <div>
@@ -56,11 +67,12 @@ const ShopByCategory = () => {
                             {data.toy_name}
                           </h2>
                           <div className="text-lg mt-4 font-semibold text-gray-500 tracking-widest">
-                            <p>Price: {data.price}</p>
+                            <p>Price: ${data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
                             to={`details/${data._id}`}
+                            onClick={handleViewDetails}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>
@@ -91,11 +103,12 @@ const ShopByCategory = () => {
                             {data.toy_name}
                           </h2>
                           <div className="text-lg mt-4 font-semibold text-gray-500 tracking-widest">
-                            <p>Price: {data.price}</p>
+                            <p>Price: ${data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
                             to={`details/${data._id}`}
+                            onClick={handleViewDetails}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>
@@ -125,11 +138,12 @@ const ShopByCategory = () => {
                             {data.toy_name}
                           </h2>
                           <div className="text-lg mt-4 font-semibold text-gray-500 tracking-widest">
-                            <p>Price: {data.price}</p>
+                            <p>Price: ${data.price}</p>
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
                             to={`details/${data._id}`}
+                            onClick={handleViewDetails}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>

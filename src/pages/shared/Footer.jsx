@@ -13,7 +13,7 @@ const Footer = () => {
 
           <div>
             <p className="text-base font-semibold tracking-widest">
-              toyHaven Ville Ltd.
+              toyHaven Ville
               <br />
               Providing reliable tech since 2004
             </p>

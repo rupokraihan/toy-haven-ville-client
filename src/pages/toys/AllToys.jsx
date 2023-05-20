@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -15,6 +18,13 @@ const AllToys = () => {
       })
       .catch((error) => console.error(error));
   }, []);
+  const handleViewDetails = () => {
+    if (!user) {
+      toast("You have to log in first to view details", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
+  };
 
   const displayedToys = toys.slice(0, 20); // Limit to maximum 20 toys
 
@@ -38,16 +48,20 @@ const AllToys = () => {
             </thead>
             <tbody>
               {displayedToys.map((toy, index) => (
-                <tr key={toy._id} className="font-bold font-serif text-gray-500">
+                <tr
+                  key={toy._id}
+                  className="font-bold font-serif text-gray-500"
+                >
                   <td>{index + 1}</td>
                   <td>{toy.toy_name}</td>
                   <td>{toy.seller_name}</td>
                   <td>{toy.subCategory}</td>
-                  <td>{toy.price}</td>
+                  <td>${toy.price}</td>
                   <td className="text-center">{toy.available_quantity}</td>
                   <td className="flex justify-center">
                     <Link
                       to={`/details/${toy._id}`}
+                      onClick={handleViewDetails}
                       className="card-actions justify-start mt-8 "
                     >
                       <button className="my-btn">View Details</button>

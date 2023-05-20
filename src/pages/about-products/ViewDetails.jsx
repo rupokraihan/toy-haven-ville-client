@@ -73,7 +73,7 @@ const ViewDetails = () => {
               <tr>
                 <td className="text-lg">Price</td>
                 <td className="text-gray-500 font-serif text-xl">
-                  {viewData.price}
+                  ${viewData.price}
                 </td>
               </tr>
               {/* row 5 */}
