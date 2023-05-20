@@ -60,7 +60,7 @@ const ShopByCategory = () => {
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
-                            to={"/details"}
+                            to={`details/${data._id}`}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>
@@ -95,7 +95,7 @@ const ShopByCategory = () => {
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
-                            to={"/details"}
+                            to={`details/${data._id}`}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>
@@ -129,7 +129,7 @@ const ShopByCategory = () => {
                             <p>Rating: {data.rating}</p>
                           </div>
                           <Link
-                            to={"/details"}
+                            to={`details/${data._id}`}
                             className="card-actions justify-start mt-8"
                           >
                             <button className="my-btn">View Details</button>
