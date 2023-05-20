@@ -7,6 +7,7 @@ import ErrorPage from "../components/ErrorPage";
 import Register from "../layouts/register/Register";
 import ViewDetails from "../pages/about-products/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import AllToys from "../pages/toys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/alltoys",
+        element:<AllToys/>
+      }
     ],
   },
 ]);
