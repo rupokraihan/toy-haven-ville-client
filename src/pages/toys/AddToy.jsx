@@ -28,7 +28,6 @@ const AddToy = () => {
       detail_description,
       image,
     };
-    console.log(toyData)
     fetch("http://localhost:5000/addtoy", {
       method: "POST",
       headers: {

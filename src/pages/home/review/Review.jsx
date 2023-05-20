@@ -17,7 +17,7 @@ const Review = () => {
             toy car buyers <br /> share their experiences and thoughts.
           </p>
         </div>
-        <div className="flex gap-6">
+        <div className="flex gap-6 ">
           <div className="card w-80 h-96 bg-[#FFFEEB] shadow-xl">
             <div className="card-body">
               <div className="flex gap-6 items-center">

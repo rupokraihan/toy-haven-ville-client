@@ -28,7 +28,7 @@ const Gallery = () => {
   return (
     <div>
       <section className="my-container">
-        <div className="">
+        <div>
           <h2 className="text-4xl tracking-widest font-bold text-center mb-6">
             toyHaven's Gallery!
           </h2>

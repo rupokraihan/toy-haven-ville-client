@@ -27,7 +27,7 @@ const ShopByCategory = () => {
 
   return (
     <div>
-      <section className="my-container">
+      <section  className="my-container">
         <h2 className="text-4xl tracking-widest font-bold text-center mb-6">
           Shop Toys by Category
         </h2>

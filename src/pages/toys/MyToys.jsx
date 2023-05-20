@@ -70,12 +70,10 @@ const MyToys = () => {
                     <td>${toy.price}</td>
                     <td className="text-center">{toy.available_quantity}</td>
 
-                    <td className="flex justify-center">
+                    <td className="flex gap-6">
                       <Link to={`/updatetoy/${toy._id}`}>
                         <button className="my-btn">Update</button>
                       </Link>
-                    </td>
-                    <td className="flex justify-center">
                       <button
                         onClick={() => handleDelete(toy._id)}
                         className="my-btn"
@@ -83,6 +81,7 @@ const MyToys = () => {
                         Delete
                       </button>
                     </td>
+                    
                   </tr>
                 ))}
               </tbody>
