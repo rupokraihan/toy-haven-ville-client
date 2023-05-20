@@ -19,6 +19,24 @@ const MyToys = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      fetch(`http://localhost:5000/mytoys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("Deleted successfully");
+            setToys(toys.filter((toy) => toy._id !== id));
+          }
+        })
+        .catch((error) => console.error(error));
+    }
+  };
+
   return (
     <div>
       <div>
@@ -36,6 +54,7 @@ const MyToys = () => {
                   <th>Price</th>
                   <th className="text-center">Available Quantity</th>
                   <th>Update/Delete</th>
+                  <th>hi</th>
                 </tr>
               </thead>
               <tbody>
@@ -50,14 +69,20 @@ const MyToys = () => {
                     <td>{toy.subCategory}</td>
                     <td>${toy.price}</td>
                     <td className="text-center">{toy.available_quantity}</td>
-                    <div className="flex gap-4">
-                      <td className="flex justify-center">
+
+                    <td className="flex justify-center">
+                      <Link to={`/updatetoy/${toy._id}`}>
                         <button className="my-btn">Update</button>
-                      </td>
-                      <td className="flex justify-center">
-                        <button className="my-btn">Delete</button>
-                      </td>
-                    </div>
+                      </Link>
+                    </td>
+                    <td className="flex justify-center">
+                      <button
+                        onClick={() => handleDelete(toy._id)}
+                        className="my-btn"
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { toast } from "react-toastify";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -40,6 +41,12 @@ const AddToy = () => {
         console.log(data);
       });
   };
+
+  const handleAdd = () => {
+    toast("Added toy Successfully", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  }
 
   
 
@@ -124,7 +131,7 @@ const AddToy = () => {
               />
             </div>
             <div className="flex justify-center mt-6">
-              <button className="my-btn">Add Toy</button>
+              <button onClick={handleAdd} className="my-btn">Add Toy</button>
             </div>
           </div>
         </form>
