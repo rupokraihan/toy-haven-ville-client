@@ -49,7 +49,7 @@ const AddToy = () => {
        icon: "success",
        title: "Update your data",
        showConfirmButton: false,
-       timer: 2000,
+       timer: 1500,
      });
   }
 
