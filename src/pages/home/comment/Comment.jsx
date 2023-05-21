@@ -13,7 +13,7 @@ const Comment = () => {
             gather <br /> to share their thoughts, experiences, and excitement.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto bg-[#0D223A] shadow-lg rounded-lg p-20">
+        <div className="max-w-4xl mx-auto bg-[#0D223A] shadow-lg rounded-lg p-6 lg:p-20">
           <h1 className="text-2xl text-white mb-4">Add a Comment</h1>
           <div className="flex gap-8 mb-4">
             <input
@@ -24,14 +24,14 @@ const Comment = () => {
             <input
               type="text"
               className="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
-              placeholder="First Name"
+              placeholder="Last Name"
             />
           </div>
           <div className="mb-4">
             <input
               type="email"
               className="w-full bg-[#314054] text-white px-4 py-2 rounded-md border border-[#314054]  focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
-              placeholder="First Name"
+              placeholder="Enter Your Email"
               required
             />
           </div>
@@ -40,6 +40,7 @@ const Comment = () => {
               className="w-full bg-[#314054] text-white h-56 px-4 py-2 rounded-md border border-[#314054] focus:outline-none focus:ring-blue-500 focus:border-blue-500 placeholder-gray-300"
               placeholder="Enter your comments"
               rows="4"
+              required
             ></textarea>
           </div>
           <div className="text-center">

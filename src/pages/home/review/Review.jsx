@@ -17,15 +17,16 @@ const Review = () => {
             toy car buyers <br /> share their experiences and thoughts.
           </p>
         </div>
-        <div className="flex gap-6 ">
-          <div className="card w-80 h-96 bg-[#FFFEEB] shadow-xl">
+        <div className="lg:flex gap-6 ">
+          {/* Card For First Review */}
+          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
                   <img src={client1} alt="" />
                 </div>
 
-                <div >
+                <div>
                   <h2 className="card-title">Takuya Nakamura</h2>
                   <p className="mt-2 text-gray-500 text-medium">
                     789 Hikari Street, Kyoto, Japan
@@ -44,7 +45,8 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="card w-80 h-96 bg-[#FFFEEB] shadow-xl">
+          {/* Card For Second Review */}
+          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
@@ -71,7 +73,8 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="card w-80 h-96 bg-[#FFFEEB] shadow-xl">
+          {/* Card For Third Review */}
+          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
@@ -98,7 +101,8 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="card w-80 h-96 bg-[#FFFEEB] shadow-xl">
+          {/* Card For Fourth Review */}
+          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl ">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>

@@ -17,6 +17,7 @@ const ShopByCategory = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  // Without login alert a toast message
   const handleViewDetails = () => {
     if (!user) {
       toast("You have to log in first to view details", {
@@ -27,7 +28,7 @@ const ShopByCategory = () => {
 
   return (
     <div>
-      <section  className="my-container">
+      <section className="my-container">
         <h2 className="text-4xl tracking-widest font-bold text-center mb-6">
           Shop Toys by Category
         </h2>
@@ -47,13 +48,13 @@ const ShopByCategory = () => {
               <Tab>Regular Car</Tab>
             </TabList>
             <hr className="border-2 bg-gray-700" />
-
+            {/* this tab for Sports Car */}
             <TabPanel>
-              <div className="flex">
+              <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Sports Car")
                   .map((data) => (
-                    <div key={data._id} className="w-1/2 p-4">
+                    <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
                         <figure>
                           <img
@@ -84,12 +85,13 @@ const ShopByCategory = () => {
               </div>
             </TabPanel>
 
+            {/* This Tab for Jeep */}
             <TabPanel>
-              <div className="flex">
+              <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Jeep")
                   .map((data) => (
-                    <div key={data._id} className="w-1/2 p-4">
+                    <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
                         <figure>
                           <img
@@ -119,12 +121,14 @@ const ShopByCategory = () => {
                   ))}
               </div>
             </TabPanel>
+
+            {/* This Tab For Regular car */}
             <TabPanel>
-              <div className="flex">
+              <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Regular Car")
                   .map((data) => (
-                    <div key={data._id} className="w-1/2 p-4">
+                    <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
                         <figure>
                           <img

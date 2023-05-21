@@ -1,28 +1,28 @@
-import React from 'react';
+import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import img1 from '../../../assets/toy-car/img-1.jpg'
-import img2 from '../../../assets/toy-car/img-2.jpg'
-import img3 from '../../../assets/toy-car/img-3.jpg'
-import img4 from '../../../assets/toy-car/img-4.jpg'
-import img5 from '../../../assets/toy-car/img-5.jpg'
-import img6 from '../../../assets/toy-car/img-6.jpg'
-import img7 from '../../../assets/toy-car/img-7.jpg'
-import img8 from '../../../assets/toy-car/img-8.jpg'
-import img9 from '../../../assets/toy-car/img-9.jpg'
-import img10 from '../../../assets/toy-car/img-10.jpg'
-import img11 from '../../../assets/toy-car/img-11.jpg'
-import img12 from '../../../assets/toy-car/img-12.jpg'
-import img13 from '../../../assets/toy-car/img-13.jpg'
-import img14 from '../../../assets/toy-car/img-14.jpg'
-import img15 from '../../../assets/toy-car/img-15.jpg'
-import img16 from '../../../assets/toy-car/img-16.jpg'
-import img17 from '../../../assets/toy-car/img-17.jpg'
-import img18 from '../../../assets/toy-car/img-18.jpg'
-import img19 from '../../../assets/toy-car/img-19.jpg'
-import img20 from '../../../assets/toy-car/img-20.jpg'
-import img21 from '../../../assets/toy-car/img-21.jpg'
-import { Link } from 'react-router-dom';
+import img1 from "../../../assets/toy-car/img-1.jpg";
+import img2 from "../../../assets/toy-car/img-2.jpg";
+import img3 from "../../../assets/toy-car/img-3.jpg";
+import img4 from "../../../assets/toy-car/img-4.jpg";
+import img5 from "../../../assets/toy-car/img-5.jpg";
+import img6 from "../../../assets/toy-car/img-6.jpg";
+import img7 from "../../../assets/toy-car/img-7.jpg";
+import img8 from "../../../assets/toy-car/img-8.jpg";
+import img9 from "../../../assets/toy-car/img-9.jpg";
+import img10 from "../../../assets/toy-car/img-10.jpg";
+import img11 from "../../../assets/toy-car/img-11.jpg";
+import img12 from "../../../assets/toy-car/img-12.jpg";
+import img13 from "../../../assets/toy-car/img-13.jpg";
+import img14 from "../../../assets/toy-car/img-14.jpg";
+import img15 from "../../../assets/toy-car/img-15.jpg";
+import img16 from "../../../assets/toy-car/img-16.jpg";
+import img17 from "../../../assets/toy-car/img-17.jpg";
+import img18 from "../../../assets/toy-car/img-18.jpg";
+import img19 from "../../../assets/toy-car/img-19.jpg";
+import img20 from "../../../assets/toy-car/img-20.jpg";
+import img21 from "../../../assets/toy-car/img-21.jpg";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
@@ -45,6 +45,8 @@ const Gallery = () => {
               <Tab>Most Sell</Tab>
               <hr className="border-2 bg-gray-700" />
             </TabList>
+
+            {/* this section for popular car */}
             <TabPanel className="mt-10">
               <div
                 data-aos="fade-up"
@@ -68,6 +70,8 @@ const Gallery = () => {
                 <img className="w-72 h-44 rounded-md" src={img5} alt="" />
               </div>
             </TabPanel>
+
+            {/* This section for New Collection */}
             <TabPanel className="mt-10">
               <div
                 data-aos="fade-up"
@@ -91,6 +95,8 @@ const Gallery = () => {
                 <img className="w-72 h-44 rounded-md" src={img2} alt="" />
               </div>
             </TabPanel>
+
+            {/* this section for most sell */}
             <TabPanel className="mt-10">
               <div
                 data-aos="fade-up"
