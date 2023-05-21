@@ -39,12 +39,7 @@ const ViewDetails = () => {
         <div className="overflow-x-auto max-w-screen-sm mx-auto mt-16">
           <table className="table w-full">
             {/* head*/}
-            <thead className="font-bold">
-              <tr>
-                <th className="text-lg font-mono">Name</th>
-                <th className="text-lg font-mono">Favorite Color</th>
-              </tr>
-            </thead>
+            
             <tbody className="mx-auto font-semibold">
               {/* row 1 */}
               <tr>
