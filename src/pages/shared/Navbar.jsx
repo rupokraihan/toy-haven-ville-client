@@ -159,8 +159,8 @@ const Navbar = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <Link to="/" className="inline-flex items-center">
-                          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                            Flavors of Mexico
+                          <span className="ml-2 text-3xl font-bold tracking-wide text-gray-800">
+                            toyHaven Ville
                           </span>
                         </Link>
                       </div>
@@ -185,19 +185,63 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link
-                            to="/blog"
+                            to="/alltoys"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                          >
+                            All Toys
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/blogs"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                           >
                             Blog
                           </Link>
                         </li>
+                        {user && (
+                          <li>
+                            <NavLink
+                              to="/mytoys"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                            >
+                              My Toys
+                            </NavLink>
+                          </li>
+                        )}
+
+                        {user && (
+                          <li>
+                            <NavLink
+                              to="/addtoy"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
+                            >
+                              Add A Toy
+                            </NavLink>
+                          </li>
+                        )}
                         <li>
-                          <Link
-                            to="/login"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
-                          >
-                            Log in
-                          </Link>
+                          {/* Conditional rendering for user profile and login/logout */}
+                          {user ? (
+                            <>
+                              <div className="lg:flex gap-6 space-x-2">
+                                {/* Sign Out button */}
+                                <NavLink
+                                  onClick={handleLogout}
+                                  className="default"
+                                >
+                                  Sign out
+                                </NavLink>
+                              </div>
+                            </>
+                          ) : (
+                            <NavLink
+                              to="/login"
+                              className="default"
+                            >
+                              Login
+                            </NavLink>
+                          )}
                         </li>
                       </ul>
                     </nav>

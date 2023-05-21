@@ -44,7 +44,7 @@ const AllToys = () => {
         <LoadingSpinner />
       ) : (
         <div className="overflow-x-auto my-container">
-          <div className="">
+          <div>
             <div className="form-control mb-10">
               <div className="input-group flex justify-center  ">
                 <input
