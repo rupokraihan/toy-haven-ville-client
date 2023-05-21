@@ -10,7 +10,6 @@ const Register = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
-
     const form = event.target;
     const name = form.username.value;
     const email = form.email.value;
@@ -20,11 +19,9 @@ const Register = () => {
     if (password.length < 6) {
       setError("Password must be 6 characters or longer");
     }
-
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-
         userInfo(loggedUser, name, photo)
           .then((result) => {})
           .catch((error) => console.log(error.message));
@@ -57,7 +54,6 @@ const Register = () => {
                   placeholder="Name"
                   className="input input-bordered"
                 />
-
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
@@ -104,7 +100,6 @@ const Register = () => {
                 </button>
               </div>
             </form>
-
             <p className="text-red-700 text-center mb-4">{error}</p>
           </div>
         </div>

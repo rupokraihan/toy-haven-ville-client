@@ -13,7 +13,7 @@ const AllToys = () => {
   useTabTitle("All Toys")
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://toy-haven-ville-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -31,7 +31,6 @@ const AllToys = () => {
   };
 
   // Implement search system on All toy page, based on the Toy name and Limit to maximum 20 toys
-
   const displayedToys = toys
     .filter((toy) =>
       toy.toy_name.toLowerCase().includes(searchToy.toLowerCase())

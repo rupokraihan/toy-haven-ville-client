@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useTabTitle from "../../hooks/useTabTitle";
 
@@ -32,7 +31,7 @@ const AddToy = () => {
       image,
     };
     console.log(toyData);
-    fetch("http://localhost:5000/addtoy", {
+    fetch("https://toy-haven-ville-server.vercel.app/addtoy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,7 +43,6 @@ const AddToy = () => {
         console.log(data);
       });
   };
-
   const handleAdd = () => {
      Swal.fire({
        position: "top-center",
@@ -54,9 +52,6 @@ const AddToy = () => {
        timer: 1500,
      });
   }
-
-  
-
   return (
     <div>
       <section className="my-container">

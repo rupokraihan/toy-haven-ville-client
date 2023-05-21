@@ -19,7 +19,7 @@ const Review = () => {
         </div>
         <div className="lg:flex gap-6 ">
           {/* Card For First Review */}
-          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
+          <div className="card lg:w-80 h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
@@ -46,7 +46,7 @@ const Review = () => {
             </div>
           </div>
           {/* Card For Second Review */}
-          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
+          <div className="card lg:w-80 h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
@@ -74,7 +74,7 @@ const Review = () => {
             </div>
           </div>
           {/* Card For Third Review */}
-          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl mb-6">
+          <div className="card lg:w-80 h-96 bg-[#FFFEEB] shadow-xl mb-6">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>
@@ -102,7 +102,7 @@ const Review = () => {
             </div>
           </div>
           {/* Card For Fourth Review */}
-          <div className="card lg:w-80 h-80 lg:h-96 bg-[#FFFEEB] shadow-xl ">
+          <div className="card lg:w-80 h-96 bg-[#FFFEEB] shadow-xl ">
             <div className="card-body">
               <div className="flex gap-6 items-center">
                 <div>

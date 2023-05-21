@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import useTabTitle from "../../hooks/useTabTitle";
@@ -14,7 +13,7 @@ const UpdateToy = () => {
   useTabTitle("update Toy")
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://toy-haven-ville-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         const update = data.filter((product) => product._id === id)[0];
@@ -33,7 +32,7 @@ const UpdateToy = () => {
       available_quantity,
       detail_description,
     };
-    fetch(`http://localhost:5000/updatetoy/${id}`, {
+    fetch(`https://toy-haven-ville-server.vercel.app/updatetoy/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

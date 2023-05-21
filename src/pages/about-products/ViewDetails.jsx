@@ -4,20 +4,18 @@ import { useParams } from 'react-router-dom';
 import useTabTitle from '../../hooks/useTabTitle';
 
 const ViewDetails = () => {
-
   const { id } = useParams();
   const [viewData, setViewData] = useState({});
   const [isLoading, setLoading] = useState(true);
   useTabTitle('Details')
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res)=> res.json())
+    fetch("https://toy-haven-ville-server.vercel.app/products")
+      .then((res) => res.json())
       .then((data) => {
         const view = data.filter((product) => product._id === id)[0];
         setViewData(view);
         setLoading(false);
-
       });
   }, [id]);
   if (isLoading) {
@@ -32,14 +30,12 @@ const ViewDetails = () => {
           src={viewData.image}
           alt=""
         />
-
         <div>
           <h2 className="text-6xl text-center mt-16">{viewData.toy_name}</h2>
           <p className="text-xl font-bold text-gray-500 max-w-screen-md mx-auto text-center mt-8">
             Description: {viewData.detail_description}
           </p>
         </div>
-
         <div className="overflow-x-auto max-w-screen-sm mx-auto mt-16">
           <table className="table w-full">
             {/* head*/}

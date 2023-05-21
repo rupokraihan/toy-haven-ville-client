@@ -228,7 +228,7 @@ const Navbar = () => {
                                 {/* Sign Out button */}
                                 <NavLink
                                   onClick={handleLogout}
-                                  className="default"
+                                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                                 >
                                   Sign out
                                 </NavLink>
@@ -237,7 +237,7 @@ const Navbar = () => {
                           ) : (
                             <NavLink
                               to="/login"
-                              className="default"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400"
                             >
                               Login
                             </NavLink>

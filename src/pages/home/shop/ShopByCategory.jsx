@@ -11,7 +11,7 @@ const ShopByCategory = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://toy-haven-ville-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setAllData(data))
       .catch((error) => console.error(error));

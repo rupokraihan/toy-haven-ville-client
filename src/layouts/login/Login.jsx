@@ -12,12 +12,9 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-
-
     signIn(email, password)
       .then((result) => {
         setUser(result.user);
@@ -38,7 +35,6 @@ const Login = () => {
         setError(error.message);
       });
   }
-
 
   return (
     <div>
@@ -102,7 +98,6 @@ const Login = () => {
                 </button>
               </div>
             </form>
-
             <p className="text-center text-red-700 mb-4">{error}</p>
           </div>
         </div>
