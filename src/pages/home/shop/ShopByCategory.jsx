@@ -53,6 +53,7 @@ const ShopByCategory = () => {
               <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Sports Car")
+                  .slice(0, 2)
                   .map((data) => (
                     <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
@@ -90,6 +91,7 @@ const ShopByCategory = () => {
               <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Jeep")
+                  .slice(0, 2)
                   .map((data) => (
                     <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
@@ -127,6 +129,7 @@ const ShopByCategory = () => {
               <div className="lg:flex">
                 {allData
                   .filter((data) => data.subCategory === "Regular Car")
+                  .slice(0, 2)
                   .map((data) => (
                     <div key={data._id} className="lg:w-1/2 p-4">
                       <div className="card h-80 card-side bg-blue-50 shadow-xl">
