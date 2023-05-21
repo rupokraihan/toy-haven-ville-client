@@ -10,7 +10,7 @@ const Review = () => {
       <section className="my-container ">
         <div className="text-center">
           <h1 className="text-4xl tracking-wide font-bold  mb-6">
-            Consumer Reviews by toyHaven Buyers
+            Client Reviews by toyHaven Buyers
           </h1>
           <p className="tracking-widest font-medium mb-6">
             Discover valuable insights and opinions in our review section, where
