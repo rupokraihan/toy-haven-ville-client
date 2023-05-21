@@ -3,12 +3,14 @@ import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProviders";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const { user } = useContext(AuthContext);
   const [searchToy, setSearchToy] = useState("");
+  useTabTitle("All Toys")
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -29,7 +31,7 @@ const AllToys = () => {
   };
 
   // Implement search system on All toy page, based on the Toy name and Limit to maximum 20 toys
-  
+
   const displayedToys = toys
     .filter((toy) =>
       toy.toy_name.toLowerCase().includes(searchToy.toLowerCase())

@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const Login = () => {
   const { signIn, setUser, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
+  useTabTitle("Login")
 
   const handleLogin = (event) => {
     event.preventDefault();

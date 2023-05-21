@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const Register = () => {
   const {createUser, userInfo, setUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  useTabTitle("Register")
 
   const handleRegister = (event) => {
     event.preventDefault();

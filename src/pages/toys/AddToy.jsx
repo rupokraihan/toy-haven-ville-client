@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+  useTabTitle("Add Toy")
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;

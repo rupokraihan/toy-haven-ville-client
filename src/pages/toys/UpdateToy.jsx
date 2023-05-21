@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import useTabTitle from "../../hooks/useTabTitle";
 
 
 
@@ -10,7 +11,7 @@ const UpdateToy = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const [updateData, setUpdateData] = useState({});
-  const [isLoading, setLoading] = useState(true);
+  useTabTitle("update Toy")
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -18,7 +19,6 @@ const UpdateToy = () => {
       .then((data) => {
         const update = data.filter((product) => product._id === id)[0];
         setUpdateData(update);
-        setLoading(false);
       });
   }, [id]);
 

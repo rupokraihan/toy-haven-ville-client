@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const Blog = () => {
   const blogRef = useRef();
+  useTabTitle("Blog")
 
   return (
     <div ref={blogRef} className="my-container">

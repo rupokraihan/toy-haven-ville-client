@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { useParams } from 'react-router-dom';
+import useTabTitle from '../../hooks/useTabTitle';
 
 const ViewDetails = () => {
 
   const { id } = useParams();
   const [viewData, setViewData] = useState({});
   const [isLoading, setLoading] = useState(true);
+  useTabTitle('Details')
 
   useEffect(() => {
     fetch("http://localhost:5000/products")

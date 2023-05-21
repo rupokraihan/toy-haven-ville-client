@@ -3,10 +3,11 @@ import { AuthContext } from "../../providers/AuthProviders";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTabTitle from "../../hooks/useTabTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
-
+  useTabTitle("My Toys")
   const [toys, setToys] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
