@@ -32,8 +32,8 @@ const Footer = () => {
           <div className="mt-6">
             <span className="footer-title">Explore</span> <br />
             <a className="link link-hover">Features</a> <br />
-            <a className="link link-hover">Review</a> <br />
             <a className="link link-hover">Security</a>
+            <a className="link link-hover">Review</a> <br />
             <br />
             <a className="link link-hover">Pricing</a> <br />
           </div>
