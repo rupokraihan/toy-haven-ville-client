@@ -43,8 +43,8 @@ const Footer = () => {
             <a className="link link-hover">Mac</a>
             <br />
             <a className="link link-hover">Windows</a> <br />
-            <a className="link link-hover">iPhone</a> <br />
             <a className="link link-hover">Android</a> <br />
+            <a className="link link-hover">iPhone</a> <br />
           </div>
 
           <div className="mt-6">
